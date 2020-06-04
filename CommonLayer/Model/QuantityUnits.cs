@@ -4,14 +4,11 @@ using System.Text;
 
 namespace CommonLayer.Model
 {
-    public class QuantityUnits
+    public enum QuantityUnits
     {
-        public enum Unit
-        {
-            Inch, Feet, Yard,
-            Gram, Kilogram, Tonne,
-            Litre, Millilitre,
-            Celsius, Fahrenheit
-        }
+        Inch, Feet, Yard,
+        Gram, Kilogram, Tonne,
+        Litre, Millilitre,
+        Celsius, Fahrenheit
     }
 }

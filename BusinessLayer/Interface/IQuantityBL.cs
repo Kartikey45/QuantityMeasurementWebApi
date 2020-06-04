@@ -16,5 +16,13 @@ namespace BusinessLayer.Interface
         QuantityAttributes ViewQuantityById(int Id);
 
         QuantityAttributes DeleteQuantityById(int Id);
+
+        QuantityComparision AddQuantityComparison(QuantityComparision comparison);
+
+        QuantityComparision ViewQuantityComparisonById(int Id);
+
+        IEnumerable<QuantityComparision> ViewQuantityComparisons();
+
+        QuantityComparision DeleteQuantityComparisonById(int Id);
     }
 }

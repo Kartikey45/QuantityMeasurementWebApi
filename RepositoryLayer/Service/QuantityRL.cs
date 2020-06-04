@@ -79,24 +79,61 @@ namespace RepositoryLayer.Service
             }
         }
 
+        public QuantityComparision AddQuantityComparison(QuantityComparision comparison)
+        {
+            try
+            {
+                dBContext.QuantityComparisions.Add(comparison);
+                dBContext.SaveChanges();
+                return comparison;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+        }
+
         public QuantityComparision ViewQuantityComparisonById(int Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                QuantityComparision comparison = dBContext.QuantityComparisions.Find(Id);
+                return comparison;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
         }
 
         public IEnumerable<QuantityComparision> ViewQuantityComparisons()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return dBContext.QuantityComparisions;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
         }
-
-        public QuantityComparision AddQuantityComparison(QuantityComparision comparison)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public QuantityComparision DeleteQuantityComparisonById(int Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                QuantityComparision comparison = dBContext.QuantityComparisions.Find(Id);
+                if (comparison != null)
+                {
+                    dBContext.QuantityComparisions.Remove(comparison);
+                    dBContext.SaveChanges();
+                }
+                return comparison;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
         }
     }
 }
