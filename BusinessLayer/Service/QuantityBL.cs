@@ -204,110 +204,108 @@ namespace BusinessLayer.Service
             }
         }
 
+        public string CompareUnitValues(QuantityComparision comparison)
+        {
+            if (comparison.firstValue > comparison.SecondValue)
+            {
+                comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
+            }
+            else if (comparison.firstValue < comparison.SecondValue)
+            {
+                comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
+            }
+            else
+            {
+                comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
+            }
+            return comparison.Result;
+        }
+
         public string Compare(QuantityComparision comparison)
         {
             try
             {
-
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Gram.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Kilogram.ToString())
                 {
                     comparison.firstValue = comparison.firstValue / 1000;
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Kilogram.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Gram.ToString())
                 {
                     comparison.firstValue = comparison.firstValue * 1000;
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Gram.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Tonne.ToString())
                 {
                     comparison.firstValue = comparison.firstValue / ( 1000 * 1000 );
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Tonne.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Gram.ToString())
                 {
                     comparison.firstValue = comparison.firstValue * (1000 * 1000);
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Kilogram.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Tonne.ToString())
                 {
                     comparison.firstValue = comparison.firstValue / 1000 ;
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
                 if (comparison.firstValueQuantityUnit == QuantityUnits.Tonne.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Kilogram.ToString())
                 {
                     comparison.firstValue = comparison.firstValue * 1000;
-                    if (comparison.firstValue > comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Greater Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else if (comparison.firstValue < comparison.SecondValue)
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Less Than {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
-                    else
-                    {
-                        comparison.Result = $"{comparison.firstValue} {comparison.SecondValueQuantityUnit} Is Equal To {comparison.SecondValue} {comparison.SecondValueQuantityUnit}";
-                    }
+                    comparison.Result = CompareUnitValues(comparison);
                 }
-
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Inch.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Feet.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue / 12 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Feet.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Inch.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue * 12;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Inch.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Yard.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue / 36 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Yard.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Inch.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue * 36 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Feet.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Yard.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue / 3 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Yard.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Feet.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue * 3 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Litre.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Millilitre.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue * 1000 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Millilitre.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Litre.ToString())
+                {
+                    comparison.firstValue = comparison.firstValue / 1000 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Celsius.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Fahrenheit.ToString())
+                {
+                    comparison.firstValue = ( comparison.firstValue * 9 / 5 ) + 32 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
+                if (comparison.firstValueQuantityUnit == QuantityUnits.Fahrenheit.ToString() && comparison.SecondValueQuantityUnit == QuantityUnits.Celsius.ToString())
+                {
+                    comparison.firstValue = ( comparison.firstValue - 32 ) * 5 / 9 ;
+                    comparison.Result = CompareUnitValues(comparison);
+                }
                 return comparison.Result;
-
             }
             catch (Exception exception)
             {
