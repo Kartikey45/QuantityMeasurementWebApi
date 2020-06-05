@@ -193,7 +193,11 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Throw Custom Exception For Null Field.
                 if (comparison == null)
                 {
-                    return BadRequest(new { Success = false, message = CustomException.ExceptionType.EMPTY_FIELD });
+                    return BadRequest(new 
+                    { 
+                        Success = false,
+                        message = CustomException.ExceptionType.EMPTY_FIELD 
+                    });
                 }
 
                 //Calling Add Comparison From BL.
@@ -202,11 +206,21 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Returning Response.
                 if (comparison.Result != null)
                 {
-                    return Ok(new { Success = true, Message = "Successful", Data = comparison1.Result });
+                    return Ok(new
+                    { 
+                        Success = true, 
+                        Message = "Successful", 
+                        Data = comparison1.Result
+                    });
                 }
                 else
                 {
-                    return Ok(new { Success = false, Message = "Failed", Data = comparison1 });
+                    return Ok(new 
+                    { 
+                        Success = false,
+                        Message = "Failed",
+                        Data = comparison1
+                    });
                 }
             }
             catch (Exception exception)
@@ -226,17 +240,31 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Returning Response.
                 if (comparisons != null)
                 {
-                    return Ok(new { Success = true, Message = "Successfull", Data = comparisons });
+                    return Ok(new
+                    { 
+                        Success = true,
+                        Message = "Successfull",
+                        Data = comparisons 
+                    });
                 }
                 else
                 {
-                    return Ok(new { Success = false, Message = "Failed", Data = comparisons });
+                    return Ok(new
+                    { 
+                        Success = false,
+                        Message = "Failed",
+                        Data = comparisons 
+                    });
 
                 }
             }
             catch (Exception exception)
             {
-                return BadRequest(new { Success = false, message = exception.Message });
+                return BadRequest(new 
+                { 
+                    Success = false,
+                    message = exception.Message
+                });
             }
         }
 
@@ -248,7 +276,11 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Throw Custom Exception For Invalid Id Field.
                 if (Id <= 0)
                 {
-                    return BadRequest(new { Success = false, message = CustomException.ExceptionType.INVALID_FIELD });
+                    return BadRequest(new 
+                    { 
+                        Success = false, 
+                        message = CustomException.ExceptionType.INVALID_FIELD
+                    });
                 }
 
                 //Calling GetCompariosn From BL For Getting Specific Comparison Detail.
@@ -257,17 +289,31 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Returning Response.
                 if (comparison != null)
                 {
-                    return Ok(new { Success = true, Message = "Successfull", Data = comparison });
+                    return Ok(new 
+                    { 
+                        Success = true,
+                        Message = "Successfull",
+                        Data = comparison 
+                    });
                 }
                 else
                 {
-                    return Ok(new { Success = false, Message = "Failed", Data = comparison });
+                    return Ok(new 
+                    { 
+                        Success = false, 
+                        Message = "Failed", 
+                        Data = comparison
+                    });
 
                 }
             }
             catch (Exception exception)
             {
-                return BadRequest(new { Success = false, message = exception.Message });
+                return BadRequest(new
+                { 
+                    Success = false,
+                    message = exception.Message 
+                });
             }
         }
 
@@ -279,7 +325,11 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Throw Custom Exception For Invalid Id Field.
                 if (Id <= 0)
                 {
-                    return BadRequest(new { Success = false, Message = CustomException.ExceptionType.INVALID_FIELD });
+                    return BadRequest(new
+                    { 
+                        Success = false,
+                        Message = CustomException.ExceptionType.INVALID_FIELD 
+                    });
                 }
 
                 //Calling DeleteCmparison From BL.
@@ -288,16 +338,30 @@ namespace QuantityMeasurementWebAPI.Controllers
                 //Returning Response.
                 if (comparison != null)
                 {
-                    return Ok(new { Success = true, Message = "Successfull", Data = comparison });
+                    return Ok(new
+                    { 
+                        Success = true, 
+                        Message = "Successfull", 
+                        Data = comparison 
+                    });
                 }
                 else
                 {
-                    return Ok(new { Success = false, Message = "Failed", Data = comparison });
+                    return Ok(new 
+                    {
+                        Success = false,
+                        Message = "Failed",
+                        Data = comparison 
+                    });
                 }
             }
             catch (Exception exception)
             {
-                return BadRequest(new { Success = false, message = exception.Message });
+                return BadRequest(new 
+                { 
+                    Success = false,
+                    message = exception.Message 
+                });
             }
         }
     }
