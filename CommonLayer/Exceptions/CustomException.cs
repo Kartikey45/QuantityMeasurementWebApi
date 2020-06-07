@@ -9,7 +9,8 @@ namespace CommonLayer.Exceptions
         public enum ExceptionType
         {
             EMPTY_FIELD,
-            INVALID_FIELD
+            INVALID_FIELD,
+            NULL_VALUE_UNIT
         }
 
         ExceptionType type;

@@ -7,6 +7,7 @@ using CommonLayer.Exceptions;
 using CommonLayer.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace QuantityMeasurementWebAPI.Controllers
 {
@@ -15,7 +16,7 @@ namespace QuantityMeasurementWebAPI.Controllers
     public class QuantityController : ControllerBase
     {
         private IQuantityBL quantityBL;
-
+       
         public QuantityController(IQuantityBL quantityBL)
         {
             this.quantityBL = quantityBL;
@@ -28,6 +29,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             try
             {
                 QuantityAttributes actualQuantity = quantityBL.AddQuantity(quantity);
+                
                 if (actualQuantity.Result != 0)
                 {
                     return Ok(new
@@ -37,6 +39,15 @@ namespace QuantityMeasurementWebAPI.Controllers
                         Data = actualQuantity 
                     });
                 }
+                else if (actualQuantity.Operation == " ")
+                {
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        message = CustomException.ExceptionType.INVALID_FIELD
+                    });
+                }
+                
                 else
                 {
                     return Ok(new { Success = false, Message = "Failed", Data = actualQuantity });
@@ -54,7 +65,7 @@ namespace QuantityMeasurementWebAPI.Controllers
 
         [HttpGet]
         [Route("ViewQuantities")]
-        public IActionResult ViewQuantities()
+        public IActionResult  ViewQuantities()
         {
             try
             {
@@ -213,6 +224,17 @@ namespace QuantityMeasurementWebAPI.Controllers
                         Data = comparison1.Result
                     });
                 }
+                else if ((comparison.firstValueQuantityUnit == " " ||
+                        comparison.SecondValueQuantityUnit == " ") || 
+                        (comparison.firstValueQuantityUnit == " " &&
+                        comparison.SecondValueQuantityUnit == " "))
+                {
+                    return BadRequest(new {
+                        Success = false, 
+                        Message = "failed", 
+                        Data = CustomException.ExceptionType.INVALID_FIELD
+                    });
+                }
                 else
                 {
                     return Ok(new 
@@ -318,7 +340,7 @@ namespace QuantityMeasurementWebAPI.Controllers
         }
 
         [HttpDelete("DeleteComparisonById/{Id}")]
-        public IActionResult DeleteQuantityComparisonById([FromRoute] int Id)
+        public IActionResult DeleteQuantityComparisonById( int Id)
         {
             try
             {

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantityMeasurementWebAPI", "QuantityMeasurementWebAPI\QuantityMeasurementWebAPI.csproj", "{84C0A966-4A94-4486-9E80-FE15FAE3C584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantityMeasurementWebAPI", "QuantityMeasurementWebAPI\QuantityMeasurementWebAPI.csproj", "{84C0A966-4A94-4486-9E80-FE15FAE3C584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLayer", "CommonLayer\CommonLayer.csproj", "{DF48D6BA-BD10-41E9-89C2-9956F4E03934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLayer", "CommonLayer\CommonLayer.csproj", "{DF48D6BA-BD10-41E9-89C2-9956F4E03934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryLayer", "RepositoryLayer\RepositoryLayer.csproj", "{6293CDDF-0550-435A-9212-27DA32E90562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryLayer", "RepositoryLayer\RepositoryLayer.csproj", "{6293CDDF-0550-435A-9212-27DA32E90562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{D9CB222E-C5CE-4713-8C84-9F529880A74D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{D9CB222E-C5CE-4713-8C84-9F529880A74D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantityMeasurementTestCases", "QuantityMeasurementTestCases\QuantityMeasurementTestCases.csproj", "{1AACEA1F-131C-4C9D-B7B4-B462D1ADBACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D9CB222E-C5CE-4713-8C84-9F529880A74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9CB222E-C5CE-4713-8C84-9F529880A74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9CB222E-C5CE-4713-8C84-9F529880A74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AACEA1F-131C-4C9D-B7B4-B462D1ADBACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AACEA1F-131C-4C9D-B7B4-B462D1ADBACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AACEA1F-131C-4C9D-B7B4-B462D1ADBACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AACEA1F-131C-4C9D-B7B4-B462D1ADBACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
