@@ -7,15 +7,19 @@ using System.Text;
 
 namespace RepositoryLayer.Service
 {
+    // Class Implementing Repository Pattern And Entity Frameork Core.
     public class QuantityRL : IQuantityRL
     {
+        //DBContext Refernce.
         private QuantityMeasurementDBContext dBContext;
 
+        // Parameter Constructor For Seting DbContext Reference by DI.
         public QuantityRL(QuantityMeasurementDBContext dBContext)
         {
             this.dBContext = dBContext;
         }
 
+        // Function to Add Conversion Detail to Database.
         public QuantityAttributes Add(QuantityAttributes quantity)
         {
             try
@@ -30,8 +34,7 @@ namespace RepositoryLayer.Service
             }
         }
 
-       
-
+        // Function to Delete Specific Data From DataBase.
         public QuantityAttributes DeleteQuantityById(int Id)
         {
             try
@@ -52,8 +55,8 @@ namespace RepositoryLayer.Service
 
         }
 
-        
 
+        // Function To Get All Convserion Details.
         public IEnumerable<QuantityAttributes> ViewQuantities()
         {
             try
@@ -66,6 +69,7 @@ namespace RepositoryLayer.Service
             }
         }
 
+        // Function to get Specific Conversion Detail.
         public QuantityAttributes ViewQuantityById(int Id)
         {
             try
@@ -79,6 +83,7 @@ namespace RepositoryLayer.Service
             }
         }
 
+        // Function To Add Comparison Detail to Database.
         public QuantityComparision AddQuantityComparison(QuantityComparision comparison)
         {
             try
@@ -93,6 +98,7 @@ namespace RepositoryLayer.Service
             }
         }
 
+        // Function to get Sppecific Comparison Details.
         public QuantityComparision ViewQuantityComparisonById(int Id)
         {
             try
@@ -106,6 +112,7 @@ namespace RepositoryLayer.Service
             }
         }
 
+        // Function to Get All Comparison Details.
         public IEnumerable<QuantityComparision> ViewQuantityComparisons()
         {
             try
@@ -117,7 +124,8 @@ namespace RepositoryLayer.Service
                 throw exception;
             }
         }
-        
+
+        // Functionn To Delete  Specific Comparison Detail.
         public QuantityComparision DeleteQuantityComparisonById(int Id)
         {
             try

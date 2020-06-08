@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CommonLayer.Model
 {
+    // Model Class For Comparison Details.
     public class QuantityComparision
     {
         [Key]

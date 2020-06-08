@@ -8,16 +8,19 @@ using static CommonLayer.Model.QuantityOperations;
 
 namespace BusinessLayer.Service
 {
+    // Class for implementing Repository pattern in Business Layer And Containg Business Logic.
     public class QuantityBL : IQuantityBL
     {
-       
+        // Repository Layer Reference.
         private IQuantityRL quatityMeasure;
 
+        // Parameter Cnstructr For Setting Repositoory Layer Reference.
         public QuantityBL(IQuantityRL quatityMeasure)
         {
             this.quatityMeasure = quatityMeasure;
         }
 
+        // Function To Perform Calculations For Conversion.
         public decimal Calculation(QuantityAttributes quantity)
         {
             try
@@ -98,6 +101,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Perform Conversion.
         public QuantityAttributes AddQuantity(QuantityAttributes quantity)
         {
             try
@@ -115,6 +119,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function TO Get All Conversion Details.
         public IEnumerable<QuantityAttributes> ViewQuantities()
         {
             try
@@ -127,6 +132,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Get Specific Conversion Details.
         public QuantityAttributes ViewQuantityById(int Id)
         {
             try
@@ -139,6 +145,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Delete Conversion Details.
         public QuantityAttributes DeleteQuantityById(int Id)
         {
             try
@@ -151,6 +158,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Add Comparison.
         public QuantityComparision AddQuantityComparison(QuantityComparision comparison)
         {
             try
@@ -168,6 +176,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Get Specific Comparison Detail.
         public QuantityComparision ViewQuantityComparisonById(int Id)
         {
             try
@@ -180,6 +189,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Get All Comparison Details.
         public IEnumerable<QuantityComparision> ViewQuantityComparisons()
         {
             try
@@ -192,6 +202,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function To Delete Comparison Details.
         public QuantityComparision DeleteQuantityComparisonById(int Id)
         {
             try
@@ -204,6 +215,7 @@ namespace BusinessLayer.Service
             }
         }
 
+        // Function to perform comparision between two values 
         public string CompareUnitValues(QuantityComparision comparison)
         {
             if (comparison.firstValue > comparison.SecondValue)
@@ -221,6 +233,7 @@ namespace BusinessLayer.Service
             return comparison.Result;
         }
 
+        // Function To Perform Comparison.
         public string Compare(QuantityComparision comparison)
         {
             try

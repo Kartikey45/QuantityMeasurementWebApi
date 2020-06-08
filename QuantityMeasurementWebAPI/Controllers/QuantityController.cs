@@ -15,16 +15,19 @@ namespace QuantityMeasurementWebAPI.Controllers
     [ApiController]
     public class QuantityController : ControllerBase
     {
+        //Business Layer Reference.
         private IQuantityBL quantityBL;
-       
+
+        // Parameter Cnstrcutor For Setting Business Layer Reference.
         public QuantityController(IQuantityBL quantityBL)
         {
             this.quantityBL = quantityBL;
         }
 
+        // Function For Handlling Request For Conversion.
         [HttpPost]
         [Route("AddMeasuredQuantity")]
-        public IActionResult AddQuantity(QuantityAttributes quantity)
+        public IActionResult AddQuantityConversion(QuantityAttributes quantity)
         {
             try
             {
@@ -63,6 +66,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Get All Conversions Request.
         [HttpGet]
         [Route("ViewQuantities")]
         public IActionResult  ViewQuantities()
@@ -96,6 +100,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function to Hnadle Specific Get Request.
         [HttpGet]
         [Route("ViewQuantityById/{Id}")]
         public IActionResult ViewQuantityById(int Id)
@@ -146,6 +151,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Delete Comparison Request.
         [HttpDelete]
         [Route("DeleteQuantityById/{Id}")]
         public IActionResult DeleteQuantityById(int Id)
@@ -196,6 +202,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Compare Request.
         [HttpPost("AddComparision")]
         public IActionResult AddQuantityComparison(QuantityComparision comparison)
         {
@@ -251,6 +258,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Get All Comparisons Request.
         [HttpGet("ViewComparisions")]
         public IActionResult ViewQuantityComparisons()
         {
@@ -290,6 +298,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Get Comparison Request.
         [HttpGet("ViewComparisionById/{Id}")]
         public IActionResult ViewComparisionById(int Id)
         {
@@ -339,6 +348,7 @@ namespace QuantityMeasurementWebAPI.Controllers
             }
         }
 
+        // Function To Handle Delete Comparison Request.
         [HttpDelete("DeleteComparisonById/{Id}")]
         public IActionResult DeleteQuantityComparisonById( int Id)
         {

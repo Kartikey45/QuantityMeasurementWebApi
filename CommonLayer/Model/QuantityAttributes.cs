@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CommonLayer.Model
 {
+    // Model Class For Conversion Details.
     public class QuantityAttributes
     {
         [Key]

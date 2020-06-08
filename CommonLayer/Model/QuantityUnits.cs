@@ -4,6 +4,7 @@ using System.Text;
 
 namespace CommonLayer.Model
 {
+    // Enum For Units.
     public enum QuantityUnits
     {
         Inch, Feet, Yard,
